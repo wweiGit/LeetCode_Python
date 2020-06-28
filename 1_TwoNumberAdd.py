@@ -7,31 +7,11 @@
 所以返回 [0, 1]
 '''
 
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        for (int i=0; i<nums.length; i++) {
-            for (int j=i+1; j<nums.length;j++) {
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
-                }
-            }
-        }
-        return null;
-    }
-}
-
-#hashmap
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i< nums.length; i++){
-            int complement = target - nums[i];
-            if (map.containsKey(complement)){
-                return new int[]{map.get(complement), i};
-            }
-            map.put(nums[i], i);
-        }
-        return new int[]{};
-    }
-    
-}
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        tmp = {}
+        for i,num in enumerate(nums):
+            if target-num in tmp:
+                return tmp[target-num],i
+            else:
+                tmp[num]=i 
