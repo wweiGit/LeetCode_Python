@@ -12,8 +12,4 @@ class Solution:
                 flg=1
             else:
                 result += romanList[s[i]]
-            print(result)
         return result
-solution = Solution()
-result = solution.romanToInt("MCMXCIV")
-print(result)
